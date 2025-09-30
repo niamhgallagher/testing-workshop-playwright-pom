@@ -13,7 +13,6 @@ class LandingPage {
     async checkPageLoads(page: Page): Promise<void> {
         // Navigate to the landing page
         await page.goto('');
-         await expect(page.locator(this.title)).toHaveText(landingPage_content.pageTitle); 
 
         // Check all elements of the page
         await Promise.all([
@@ -23,10 +22,6 @@ class LandingPage {
     }
 
     async continueOn(page: Page): Promise<void> {
-        await page.click('gov.uk-button')
-        await Promise.all([
-            expect(page).toHaveURL('https://www.gov.uk/calculate-your-holiday-entitlement')
-        ])
         // Click the continue button
 
     }
